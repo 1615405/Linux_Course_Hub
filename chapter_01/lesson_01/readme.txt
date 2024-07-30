@@ -11,6 +11,7 @@
     - 预编译：gcc -E hello.c -o hello.i  或者  cpp hello.c > hello.i
     - 编译: gcc -S hello.i -o hello.s
     - 汇编: as helloc.s -o hello.o  或者  gcc -c hello.s -o hello.c
+    - 查找: find /usr/lib -name crt1.o
 
 ld -static \
   /usr/lib/x86_64-linux-gnu/crt1.o \
