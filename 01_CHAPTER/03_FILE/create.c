@@ -17,7 +17,6 @@ int main()
 
 /*
 int open(const char *pathname, int flags, mode_t mode)
-参数：
     - pathname:
         - 要创建的文件的路径
     - flags: 对文件的操作权限和其他的设置
