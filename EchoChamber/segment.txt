@@ -43,5 +43,6 @@
 3.  自定义段
     - 正常情况下, GCC编译出来的目标文件中, 代码会被放到 .text 段, 全局变量和静态变量会被放到 .data 和 .bss 段. GCC 提供了一个扩展机制,
       使得程序员可以指定变量所处的段.
-    -   __attribute__((section("FOO"))) int global = 42
-        __attribute__((section("BAR"))) void foo() {}
+    -  __attribute__((section("FOO"))) int global = 42
+       __attribute__((section("BAR"))) void foo() {}
+    -  objdump -x -s -d hello.o
