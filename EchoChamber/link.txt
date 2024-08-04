@@ -1,0 +1,23 @@
+1.  在链接中, 目标文件之间相互拼合实际上是目标文件之间对地址的引用, 即对函数和变量的地址的引用. 在链接中,
+    我们将函数和变量统称为符号, 函数名或变量名就是符号名.
+
+2.  链接过程中很关键的一部分就是符号的管理, 每一个目标文件都会有一个相应的符号表, 这个表里面记录了目标文件中
+    所用到的所有符号. 每个定义的符号有一个对应的值, 叫做符号值. 对于变量和函数来说, 符号值就是它们的地址.
+
+3.  ELF 符号表结构
+    /* Symbol table entry.  */
+    typedef struct {
+      Elf32_Word    st_name;                /* Symbol name (string tbl index) */
+      Elf32_Addr    st_value;               /* Symbol value */
+      Elf32_Word    st_size;                /* Symbol size */
+      unsigned char st_info;                /* Symbol type and binding */
+      unsigned char st_other;               /* Symbol visibility */
+      Elf32_Section st_shndx;               /* Section index */
+    } Elf32_Sym;
+    nm SimpleSection.o   // 查看SimpleSection.o的符号结果
+
+4.  特殊符号
+    - __executable_start: 该符号为程序的起始地址, 不是入口地址, 是程序的最开始的地址.
+    - __etext__: 该符号为代码段结束地址, 即代码段最末尾的地址.
+    - _edata: 该符号为数据段结束地址, 即数据段最末尾的地址.
+    - _end: 该符号为程序结束地址. 以上地址都为程序被装载时的虚拟地址.
