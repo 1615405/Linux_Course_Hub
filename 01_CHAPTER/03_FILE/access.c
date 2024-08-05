@@ -6,6 +6,7 @@ int main()
     int ret = access("a.txt", F_OK);
     if (ret == -1) {
         perror("access");
+        return -1;
     }
     printf("The file is exist!");
     return 0;
