@@ -26,5 +26,5 @@ int access(const char *pathname, int mode)
             X_OK: 判断是否有执行权限
             F_OK: 判断文件是否存在
     返回值:
-        成功返回0， 失败返回-1
+        成功返回0, 失败返回-1
 */
