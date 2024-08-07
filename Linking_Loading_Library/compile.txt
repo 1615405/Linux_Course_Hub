@@ -67,6 +67,7 @@
     - 编译: gcc -S hello.i -o hello.s
     - 汇编: as helloc.s -o hello.o  或者  gcc -c hello.s -o hello.c
     - 查找: find /usr/lib -name crt1.o
+    - 依赖: gcc -static --verbose -fno-builtin hello.c
 
 ld -static \
   /usr/lib/x86_64-linux-gnu/crt1.o \
